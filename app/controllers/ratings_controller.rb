@@ -8,5 +8,8 @@ class RatingsController < ApplicationController
 		@users = User.all
 		@categories = Category.all
 	end
-
+  
+  def change_role
+  	
+  end
 end

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     authenticated :user do
     root :to => 'ratings#admin_dashboard'
     get '/dashboard' => 'ratings#admin_dashboard'
+    get '/roles' => 'ratings#change_role'
   end 
   unauthenticated :user do
     root :to => 'ratings#index', as: :unauthenticated_root
