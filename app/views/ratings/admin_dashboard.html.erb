@@ -15,6 +15,7 @@
     	   <% else %>
     	   <%# flash[:msg] = "roles not defined for #{u.email}" %>
     	  <% end %>
+        
         <%= link_to "Change roles",edit_rating_path(u) %>
         <br>
      <% end %>    

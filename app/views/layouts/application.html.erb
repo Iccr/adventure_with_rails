@@ -19,7 +19,8 @@
 <% end %>
 
 <%= yield %>
-<% if user_signed_in? %>  
+<% if user_signed_in? %> 
+      <br> 
       Logged in as <strong><%= current_user.email%></strong> as
       <%#binding.pry%>
       <% if current_user.roles.present? %> 
