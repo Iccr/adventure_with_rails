@@ -4,4 +4,8 @@ class RatingsController < ApplicationController
 		
 	end
 
+	def admin_dashboard
+		
+	end
+
 end
