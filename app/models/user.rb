@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
 	User.connection
+	has_many :categories
   rolify
   resourcify
   # Include default devise modules. Others available are:
