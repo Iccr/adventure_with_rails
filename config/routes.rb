@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     authenticated :user do
     root :to => 'ratings#admin_dashboard'
+    get '/dashboard' => 'ratings#admin_dashboard'
   end 
   unauthenticated :user do
     root :to => 'ratings#index', as: :unauthenticated_root
