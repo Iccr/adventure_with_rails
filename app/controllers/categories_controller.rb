@@ -20,12 +20,25 @@ class CategoriesController < ApplicationController
 
   def edit
     @category = Category.find(params[:id])
+
   end
 
   def update
+     @category = Category.find(params[:id])
+     if @category.update(set_params)
+      redirect_to dashboard_path
+     else
+      flash[:msg] = "failed to update"
+     end
   end
 
   def destroy
+    @category = Category.find(params[:id])
+    if @category.destroy
+      redirect_to dashboard_path
+     else
+      flash[:msg]="failed to delete"
+    end
   end
 
   def show

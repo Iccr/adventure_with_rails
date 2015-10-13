@@ -1,29 +1,28 @@
-<h1> Admin Dashboard</h1>
+  <h1> Admin Dashboard</h1>
+  <% if can? :create, @category %>
+  <%=link_to "Change roles"%><br>
+  <%=link_to "Add new categories", new_category_path %><br>
+  <% end %>
+  <h4>Current users</h4>
 
-<% if can? :create, @catogery %>
-   this is admin
-   this is not admin
-<% end %>
-
-
-<% if can? :create, @category %>
-<%=link_to "Change roles"%><br>
-<%=link_to "Add new categories", new_category_path %><br>
-<% end %>
-<h4>Current users</h4>
-
-<strong>
-	<% @users.each do |u| %>
-		<%= u.email %> as
-		<!-- check if the roles exstis -->
-		<% if u.roles.present? %>
-		 <%= u.roles.first.name %></strong><br>
-		 <% else %>
-		  <%# flash[:msg] = "roles not defined for #{u.email}" %>
-		<% end %>
+  <strong>
+  <% @users.each do |u| %>
+  	<%= u.email %> as
+  	<!-- check if the roles exstis -->
+  	<% if u.roles.present? %>
+  	 <%= u.roles.first.name %></strong><br>
+  	 <% else %>
+  	  <%# flash[:msg] = "roles not defined for #{u.email}" %>
+  	<% end %>
   <% end %> 
-<strong>
-	<h4>Categories</h4>
-	<% @categories.each do |c| %>
-   <%= c.name %><br>
+  <strong>
+  <h4>Categories</h4>
+  <% @categories.each do |c| %>
+   
+   <section>
+   	<%= c.name %>
+   	<%= link_to "EDIT",edit_category_path(c) %>
+   	<%= link_to "DELETE", category_path(c), method: :delete, data: { confirm: 'Are you sure?' }  %>
+   </section>
+   <br>
   <% end %><br>
