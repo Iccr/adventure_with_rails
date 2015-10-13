@@ -1,4 +1,9 @@
 <h1> Admin Dashboard</h1>
-<%=link_to "Add new students"%><br>
+<%=link_to "Add new user"%><br>
 <%=link_to "Change roles"%><br>
 <%=link_to "Add new categories"%><br>
+<h4>Current users</h4>
+<strong><% @users.each do |u| %>
+<%= u.email %> as
+<%= u.roles.first.name %></strong><br>
+<% end %>
