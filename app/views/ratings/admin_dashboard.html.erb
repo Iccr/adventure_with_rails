@@ -1,6 +1,6 @@
   <h1> Admin Dashboard</h1>
-  <% if can? :create, @category %>
-   <%=link_to "Change roles"%><br>
+  
+  <% if can? :create, @category %>   
    <%=link_to "Add new categories", new_category_path %><br>
   <% end %>
 
@@ -15,7 +15,7 @@
     	   <% else %>
     	   <%# flash[:msg] = "roles not defined for #{u.email}" %>
     	  <% end %>
-        
+
         <%= link_to "Change roles",edit_rating_path(u) %>
         <br>
      <% end %>    
