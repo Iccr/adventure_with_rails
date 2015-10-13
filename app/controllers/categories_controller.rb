@@ -14,11 +14,12 @@ class CategoriesController < ApplicationController
       flash[:msg] = "sucessfully created "
       redirect_to dashboard_path
     else
-      flash[:msg] = "failed"
+      flash[:msg] = "New category failed"
     end 
   end
 
   def edit
+    @category = Category.find(params[:id])
   end
 
   def update

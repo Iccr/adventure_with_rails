@@ -1,9 +1,9 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(email)
-    user = User.find_by_email(email)
-    binding.pry
+  def initialize(user)
+    # user = User.find_by_email(email)
+    # binding.pry
     if user.has_role? :admin      
       can :manage, :all
     else

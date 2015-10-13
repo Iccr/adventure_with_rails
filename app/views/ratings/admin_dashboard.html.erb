@@ -1,19 +1,25 @@
 <h1> Admin Dashboard</h1>
 
 <% if can? :create, @catogery %>
-this is admin
-<% else %>
-this is not admin
+   this is admin
+   this is not admin
 <% end %>
+
 <%=link_to "Change roles"%><br>
 <%=link_to "Add new categories", new_category_path %><br>
+<h4>Current users</h4>
 
-<h4>Current users</h4>
 <strong><% @users.each do |u| %>
-<%= u.email %> as
-<%= u.roles.first.name %></strong><br>
+	<%= u.email %> as
+	<!-- check if the roles exstis -->
+	<% if u.roles.present? %>
+	<%= u.roles.first.name %></strong><br>
+	<% else %>
+	<% flash[:msg] = "roles not defined for #{u.email}" %>
+	<% end %>
 <% end %>
-<h4>Current users</h4>
+
+<h4>Categories</h4>
 <strong><% @categories.each do |c| %>
-<%= c.name %>
+<%= c.name %><br>
 <% end %><br>

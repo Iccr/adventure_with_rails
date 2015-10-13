@@ -21,7 +21,12 @@
 <%= yield %>
 <% if user_signed_in? %>  
       Logged in as <strong><%= current_user.email%></strong> as
-   <strong><%= current_user.roles.first.name %></strong>
+      <%#binding.pry%>
+      <% if current_user.roles.present? %> 
+      <strong><%= current_user.roles.first.name %></strong>      
+      <% else %>
+      guest
+      <% end %>
      <%= link_to "sign out",destroy_user_session_path, method: :delete   %>
  <% end %>
  <br>
