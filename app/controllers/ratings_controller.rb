@@ -6,7 +6,7 @@ class RatingsController < ApplicationController
 
 	def admin_dashboard
 		@users = User.all
-
+		@categories = Category.all
 	end
 
 end

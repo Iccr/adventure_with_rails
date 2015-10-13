@@ -7,3 +7,8 @@
 <%= u.email %> as
 <%= u.roles.first.name %></strong><br>
 <% end %>
+<h4>Current users</h4>
+<strong><% @categories.each do |c| %>
+<%= c.name %>
+
+<% end %><br>
