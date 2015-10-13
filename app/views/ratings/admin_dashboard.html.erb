@@ -1,5 +1,10 @@
 <h1> Admin Dashboard</h1>
 
+<% if can? :create, @catogery %>
+this is admin
+<% else %>
+this is not admin
+<% end %>
 <%=link_to "Change roles"%><br>
 <%=link_to "Add new categories", new_category_path %><br>
 

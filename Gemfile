@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'pry-rails'
 gem 'cancancan', '~> 1.10'
 gem 'rolify'
 gem 'devise'
