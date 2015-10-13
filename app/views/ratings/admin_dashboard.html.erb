@@ -6,7 +6,9 @@
 <% end %>
 
 <%=link_to "Change roles"%><br>
+<% if can? :create, @category %>
 <%=link_to "Add new categories", new_category_path %><br>
+<% end %>
 <h4>Current users</h4>
 
 <strong><% @users.each do |u| %>
