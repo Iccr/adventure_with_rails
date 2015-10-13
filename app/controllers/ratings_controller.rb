@@ -9,7 +9,7 @@ class RatingsController < ApplicationController
 		@categories = Category.all
 	end
   
-  def change_role
-  	
+  def edit # change_role is same as edit may be i sud have gone with convention
+  	@user = User.find(params[:id])
   end
 end
